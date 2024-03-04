@@ -1,0 +1,61 @@
+<div class="container">
+  <h2>Register</h2>
+  <form (ngSubmit)="register()" #registerForm="ngForm" novalidate>
+    <div class="mb-3">
+      <label for="userName" class="form-label">Username</label>
+      <input
+        type="text"
+        class="form-control"
+        id="userName"
+        [(ngModel)]="newUser.UserName"
+        name="userName"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        [(ngModel)]="newUser.Email"
+        name="email"
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+        title="Please enter a valid email address"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        [(ngModel)]="newUser.Password"
+        name="password"
+        minlength="8"
+      />
+      
+    </div>
+    <div class="mb-3">
+      <label for="address" class="form-label">Address</label>
+      <input
+        type="text"
+        class="form-control"
+        id="address"
+        [(ngModel)]="newUser.Address"
+        name="address"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="imageURL" class="form-label">Image URL</label>
+      <input
+        type="text"
+        class="form-control"
+        id="imageURL"
+        [(ngModel)]="newUser.ImageURL"
+        name="imageURL"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Register</button>
+  </form>
+  <button routerLink="/login">Go back</button>
+</div>

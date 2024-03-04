@@ -1,0 +1,22 @@
+<app-navbar></app-navbar>
+<div class="col-md-12 mb-5">
+  <h3>Items in Cart ({{ cart.length }}):</h3>
+  <div class="d-flex flex-row flex-wrap">
+    <div *ngFor="let product of cart" class="mr-3">
+      <div class="card">
+        <img class="card-img-top" [src]="product.imageURL" alt="Product Image" />
+        <div class="card-body">
+          <h5 class="card-title">{{ product.name }}</h5>
+          <p [ngClass]="{'selected-genre': product.selected}" (click)="toggleGenre(product)">
+            <strong>Genre:</strong> {{ product.category }}
+          </p>
+          <h5>{{ product.price }}$</h5>
+          <button (click)="addToCart(product)">Add another</button>
+          <button (click)="removeFromCart(product)">remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h4 class="total">Total: {{ calculateTotal() }}$</h4>
+  <button type="button" class="btn btn-primary" (click)="payment()">pay</button>
+</div>

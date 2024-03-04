@@ -1,0 +1,44 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+  <div class="row">
+    <!-- Sidebar -->
+    <div class="col-md-3">
+      <h4>Filter by Genres:</h4>
+      <ul>
+        <li
+          *ngFor="let category of productCategories"
+          (click)="filterProductsByCategory(category)"
+        >
+          {{ category }}
+        </li>
+      </ul>
+    </div>
+
+    <!-- Products -->
+    <div class="col-md-9">
+      <h4>Products</h4>
+      <div class="row">
+        <div class="col-md-4 mb-3" *ngFor="let product of products">
+          <div class="card">
+            <img
+              class="card-img-top"
+              [src]="product.imageURL"
+              alt="Product Image"
+            />
+            <div class="card-body">
+              <h5 class="card-title">{{ product.name }}</h5>
+              <p><strong>Genre:</strong> {{ product.category }}</p>
+              <h5>{{ product.price }}$</h5>
+              <!-- Show genre -->
+              <p class="card-text">{{ product.description }}</p>
+              <button class="btn btn-primary" (click)="addToCart(product)">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

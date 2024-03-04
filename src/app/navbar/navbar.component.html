@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+  <div class="container-fluid">
+    <img id="logo" src="https://jeffschwisow.com/wp-content/uploads/2018/01/book-depository.png" alt="Logo" />
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarColor01">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/home">
+            Home
+            <span class="visually-hidden">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/products">Products</a>
+        </li>
+        <li class="nav-item">
+          <!-- Display the cart button with dynamic cart length -->
+          <a class="nav-link" routerLink="/cart">
+            Cart {{ cartLength }}
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contacts">Contacts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/login">Logout</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="user" [routerLink]="['/user', currentUser?.id]">{{ currentUser?.UserName }}
+
+            <img *ngIf="currentUser" class="circular--portrait" [src]="currentUser.ImageURL" alt="User Image">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

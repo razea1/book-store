@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
+</head>
+<body>
+  <div class="form-container">
+    <img src="https://jeffschwisow.com/wp-content/uploads/2018/01/book-depository.png" alt="Logo">
+    <form (ngSubmit)="login()">
+      <!-- Input fields for email and password -->
+      <input type="email" placeholder="Email" [(ngModel)]="username" name="username" required>
+      <input type="password" placeholder="Password" [(ngModel)]="password" name="password" required>
+      <!-- Link to register page -->
+      <a routerLink="/register">Can't log in?</a>
+      <!-- Submit button -->
+      <button id="submitButton" type="submit">Log In</button>
+    </form>
+  </div>
+  <!-- Container for registered users -->
+  <div class="register-container">
+    <button id="users" routerLink="/registered-users">Users List</button>
+  </div>
+  
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!-- registered-users.component.html -->
+<table>
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>Email</th>
+        <th>image</th>
+        <!-- Add more columns if needed -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.UserName }}</td>
+        <td>{{ user.Email }}</td>
+        <td>{{user.ImageURL}}</td>
+        <!-- Add more cells if needed -->
+      </tr>
+    </tbody>
+  </table>
+  <button routerLink="/login">go back</button>

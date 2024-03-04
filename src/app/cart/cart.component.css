@@ -1,0 +1,80 @@
+/* Add this CSS to make the items flex wrap */
+.overflow-auto {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.addCart {
+  margin-top: 8px;
+  width: auto;
+  height: auto;
+}
+.selected-genre {
+  color: blue;
+}
+
+.card {
+  margin-bottom: 20px;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease;
+  height: 400px;
+  width: 300px;
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  max-height: 200px; /* Adjust as needed */
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 14px;
+  line-height: 1.4;
+  height: 80px; /* Adjust the height to control the maximum display of description */
+  text-overflow: ellipsis;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #343a40; /* Dark background color */
+}
+
+/* Logo */
+#logo {
+  height: 50px;
+}
+
+/* Main container */
+.container {
+  padding-top: 20px; /* Add some top padding */
+}
+
+/* Card styling */
+.card {
+  margin-right: 10px; /* Adjust margin as needed */
+  margin-top: 30px;
+}
+
+/* Button */
+.btn-go-back {
+  margin-top: 20px; /* Add margin on top */
+}
+.total {
+  margin-top: 30px;
+}

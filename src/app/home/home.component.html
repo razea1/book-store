@@ -1,0 +1,108 @@
+<app-navbar></app-navbar>
+<h2 *ngIf="currentUser">Welcome, {{ currentUser.UserName }}</h2>
+<!-- <input type="text" #searchInput placeholder="Search books...">
+<button (click)="searchBooks(searchInput.value)">Search</button> -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 mb-5">
+      <h4>Books of the Week</h4>
+      <div class="d-flex flex-row flex-nowrap overflow-auto">
+        <!-- Use overflow-auto to enable horizontal scrolling if needed -->
+        <div *ngFor="let product of products" class="mr-3">
+          <!-- Increased margin -->
+          <div class="card">
+            <img
+              class="card-img-top"
+              src="{{ product.imageURL }}"
+              alt="Product Image"
+            />
+            <div class="card-body">
+              <h5 class="card-title">{{ product.name }}</h5>
+              <p><strong>Genre:</strong> {{ product.category }}</p>
+              <!-- Show genre -->
+              <h5>{{ product.price }}$</h5>
+
+              <!-- Show short description by default -->
+              <!-- <p class="card-text short-description">{{ shortenDescription(product.description) }}</p> -->
+              <!-- Button to toggle full description -->
+              <!-- Full description hidden by default -->
+              <p
+                class="card-text full-description"
+                *ngIf="product.showDescription"
+              >
+                {{ product.description }}
+              </p>
+              <button
+                class="btn btn-primary"
+                (click)="toggleDescription(product)"
+              >
+                {{
+                  product.showDescription
+                    ? "Hide Description"
+                    : "Show Description"
+                }}
+              </button>
+
+              <button
+                class="btn btn-primary addCart"
+                (click)="addToCart(product)"
+              >
+                add to cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- New Products -->
+    <!-- New Products -->
+    <div class="col-md-12 mb-5">
+      <h4>New Products</h4>
+      <div class="d-flex flex-row flex-nowrap overflow-auto">
+        <!-- Use overflow-auto to enable horizontal scrolling if needed -->
+        <div *ngFor="let product of newProducts" class="mr-3">
+          <!-- Increased margin -->
+          <div class="card">
+            <img
+              class="card-img-top"
+              src="{{ product.imageURL }}"
+              alt="Product Image"
+            />
+            <div class="card-body">
+              <h5 class="card-title">{{ product.name }}</h5>
+              <p><strong>Genre:</strong> {{ product.category }}</p>
+              <!-- Show genre -->
+              <h5>{{ product.price }}$</h5>
+              <!-- Show genre -->
+              <!-- Show short description by default -->
+              <!-- <p class="card-text short-description">{{ shortenDescription(product.description) }}</p> -->
+              <p
+                class="card-text full-description"
+                *ngIf="product.showDescription"
+              >
+                {{ product.description }}
+              </p>
+              <button
+                class="btn btn-primary"
+                (click)="toggleDescription(product)"
+              >
+                {{
+                  product.showDescription
+                    ? "Hide Description"
+                    : "Show Description"
+                }}
+              </button>
+              <button
+                class="btn btn-primary addCart"
+                (click)="addToCart(product)"
+              >
+                add to cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
