@@ -15,7 +15,7 @@ export class CartComponent implements OnInit {
 
   ngOnInit(): void {
     this.cart = this.CartService.getCartItems();
-    this.calculateTotal(); // Calculate total sum initially
+    this.calculateTotal(); 
   }
   calculateTotal(): number {
     this.total = 0;
@@ -33,15 +33,15 @@ export class CartComponent implements OnInit {
     console.log('Number of items in cart: ' + cnt);
   }
   removeFromCart(product: Product): void {
-    const index = this.cart.findIndex((item: Product) => item === product); // Find the index of the product in the cart array
+    const index = this.cart.findIndex((item: Product) => item === product); 
     if (index !== -1) {
-      this.cart.splice(index, 1); // Remove the product from the cart array
-      this.calculateTotal(); // Recalculate total sum
+      this.cart.splice(index, 1); 
+      this.calculateTotal(); 
     }
   }
   addToCart(product: Product): void {
-    this.cart.push(product); // Add the same product again
-    this.calculateTotal(); // Recalculate total sum
+    this.cart.push(product); 
+    this.calculateTotal(); 
   }
   payment(): void {
     alert(

@@ -11,8 +11,8 @@
             <strong>Genre:</strong> {{ product.category }}
           </p>
           <h5>{{ product.price }}$</h5>
-          <button (click)="addToCart(product)">Add another</button>
-          <button (click)="removeFromCart(product)">remove</button>
+          <button class="btn btn-primary add" (click)="addToCart(product)">Add another</button>
+          <button class="btn btn-primary remove" (click)="removeFromCart(product)">remove</button>
         </div>
       </div>
     </div>

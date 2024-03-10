@@ -6,6 +6,7 @@
     <div class="col-md-3">
       <h4>Filter by Genres:</h4>
       <ul>
+        <li (click)="resetProducts()">All Products</li>
         <li
           *ngFor="let category of productCategories"
           (click)="filterProductsByCategory(category)"
